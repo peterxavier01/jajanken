@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #111;
+  --gray: #555;
+  --light-gray: rgba(85, 85, 85, 0.5);
+  --light-text-color: rgba(255, 255, 255, 0.9);
+  --dark-text-color: hsl(229, 25%, 31%);
+  --scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+}
