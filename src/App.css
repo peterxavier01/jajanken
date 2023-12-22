@@ -1,0 +1,14 @@
+.App {
+  background: var(--bg-main);
+  width: 100%;
+  min-height: 100vh;
+  padding-block: 2em;
+  position: relative;
+  user-select: none;
+}
+
+.rules-wrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+}

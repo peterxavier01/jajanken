@@ -1,0 +1,16 @@
+.rules-btn {
+  border: 2px solid hsl(217, 16%, 75%);
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 6px;
+  color: hsl(217, 16%, 75%);
+  padding: 0.5em 2em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .rules-btn {
+    margin-right: 50px;
+  }
+}

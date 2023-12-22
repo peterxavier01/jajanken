@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --light-gray: rgba(85, 85, 85, 0.5);
+  --light-text-color: rgba(255, 255, 255, 0.9);
+  --dark-text-color: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --scissors-gradient: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+  --paper-gradient: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+  --rock-gradient: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+  --bg-main: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  --clr-rock-1: hsl(349, 71%, 52%);
+  --clr-rock-shadow: hsl(349, 70%, 37%);
+  --clr-paper-shadow: hsl(230, 89%, 55%);
+  --clr-scissors-shadow: hsl(40, 84%, 35%);
+  --transition-time: 300ms;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: grid;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 90vw;
+    height: 90vw;
+    min-width: 270px;
+    min-height: 270px;
+  }
+}
+
+.container--RockPaperScissors {
+  --button-size: 8;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(20, 1fr);
+  margin-top: 66px;
+}
+
+.container--RockPaperScissors__rock {
+  grid-row: 11 / span var(--button-size);
+  grid-column: 7 / span var(--button-size);
+}
+
+.container--RockPaperScissors__paper {
+  grid-row: 1 / span var(--button-size);
+  grid-column: 1 / span var(--button-size);
+}
+
+.container--RockPaperScissors__scissors {
+  grid-row: 1 / span var(--button-size);
+  grid-column: -9 / span var(--button-size);
+}
+
+.container__background {
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.container__background > svg {
+  transform: scale(1.1);
+  overflow: visible;
+}
+
+@media (max-width: 500px) {
+  .container__background > svg {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 400px) {
+  .container__background > svg {
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 360px) {
+  .container__background > svg {
+    transform: scale(0.6);
+  }
+}

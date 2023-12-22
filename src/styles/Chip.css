@@ -1,0 +1,90 @@
+.chip .shape-wrapper .outer-circle,
+.chip .shape-wrapper .inner-circle {
+  z-index: 2;
+}
+
+.chip .row-one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+}
+
+.chip .outer-circle {
+  --box-shadow: 6px;
+  padding: 1em;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 var(--box-shadow) 0;
+  transition: transform var(--transition-time),
+    box-shadow var(--transition-time);
+}
+
+.chip .outer-circle:active {
+  box-shadow: 0 0 0;
+  transform: translateY(var(--box-shadow));
+}
+
+.chip .inner-circle:active {
+  box-shadow: 0 0 0;
+  transform: translateY(var(--box-shadow) - 1);
+}
+
+.chip .outer-circle + .chip .inner-circle {
+  box-shadow: 0 calc(var(--box-shadow) / 4) 0 #d9d9d9;
+  transform: translateY(var(--box-shadow));
+}
+
+.chip .outer-circle.scissors {
+  background: var(--scissors-gradient);
+  color: var(--clr-scissors-shadow);
+}
+
+.chip .outer-circle.paper {
+  background: var(--paper-gradient);
+  color: var(--clr-paper-shadow);
+}
+
+.chip .outer-circle.rock {
+  background: var(--rock-gradient);
+  color: var(--clr-rock-shadow);
+}
+
+.chip .inner-circle {
+  --box-shadow-inner-circle: calc(var(--box-shadow) / 1.4);
+  background-color: var(--light-text-color);
+  padding: 1.2em;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 calc(var(--box-shadow-inner-circle) * -1) 0 #d9d9d9;
+  transform: translateY(calc(var(--box-shadow-inner-circle) / 2));
+  transition: transform var(--transition-time),
+    box-shadow var(--transition-time), height var(--transition-time);
+}
+
+.chip .inner-circle img {
+  width: 50px;
+  height: 55px;
+  display: block;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+.chip .inner-circle,
+.chip .outer-circle {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .chip .outer-circle {
+    width: 150px;
+    height: 150px;
+  }
+}
